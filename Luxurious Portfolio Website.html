@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chealsea & Nana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      @media (max-width: 768px) {
+        .grid {
+          grid-template-columns: 1fr !important;
+        }
+        .text-5xl {
+          font-size: 2.5rem !important;
+        }
+        .text-4xl {
+          font-size: 2rem !important;
+        }
+        .px-8 {
+          padding-left: 1rem !important;
+          padding-right: 1rem !important;
+        }
+        .py-20 {
+          padding-top: 3rem !important;
+          padding-bottom: 3rem !important;
+        }
+        .gap-12 {
+          gap: 1.5rem !important;
+        }
+        .space-y-12 > * + * {
+          margin-top: 1.5rem !important;
+        }
+      }
+      .animate-typing::after {
+        content: "|";
+        animation: blink 1s infinite;
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: #f8a56e;
+        transition: width 0.3s;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      .project-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.8) 100%
+        );
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .project-card:hover::before {
+        opacity: 1;
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in {
+        animation: fadeInUp 0.6s ease-out;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#57B5E7",
+              secondary: "#8DD3C7",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-cream">
+    <nav
+      class="fixed w-full bg-cream/80 backdrop-blur-md z-50 border-b border-gray-100"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+          <a href="#" class="text-2xl font-['Pacifico'] text-primary">CENA</a>
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#tentang"
+              class="nav-link relative text-gray-700 hover:text-primary transition-colors"
+              >Tentang</a
+            >
+            <a
+              href="#ulasan"
+              class="nav-link relative text-gray-700 hover:text-primary transition-colors"
+              >Ulasan</a
+            >
+
+            <a
+              href="#menu"
+              class="nav-link relative text-gray-700 hover:text-primary transition-colors"
+              >Deskripsi Menu</a
+            >
+            <a
+              href="#contact"
+              class="nav-link relative text-gray-700 hover:text-primary transition-colors"
+              >Contact</a
+            >
+          </div>
+          <button class="md:hidden w-10 h-10 flex items-center justify-center">
+            <i class="ri-menu-line text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <header
+      class="pt-24 md:pt-32 pb-16 md:pb-20 px-4 relative overflow-hidden bg-gradient-to-br from-cream via-blue-50/30 to-primary/5"
+    >
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div>
+            <h2 class="text-xl text-primary font-semibold mb-2">
+              Restoran CENA
+            </h2>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-typing">
+              Kenikmatan Otentik, Suasana Jepang
+            </h1>
+            <p class="text-lg text-gray-600 mb-8">
+              Selamat datang di Restoran CENA, tempat ini mana cita rasa Jepang yang otentik dipadukan dengan suasana hangat dan modern.
+              Kami menyediakan berbagai hidangan khas Jepang, mulai dari sushi segar, ramen berkuah gurih, hingga donburi dan katsu yang menggugah selera.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+            </div>
+          </div>
+          <div class="relative">
+            <div class="relative w-full h-[300px] md:h-[500px] mt-8 md:mt-0">
+              <img
+                src="dua.jpg"
+                alt="Hero Image 1"
+                class="absolute top-0 right-0 w-[80%] h-[80%] rounded-2xl shadow-2xl object-cover z-20"
+              />
+              <img
+                src="logo.jpg"
+                alt="Hero Image 2"
+                class="absolute bottom-0 left-0 w-[60%] h-[60%] rounded-2xl shadow-2xl object-cover z-30"
+              />
+              <div
+                class="absolute -right-8 -top-8 w-48 h-48 bg-primary/10 rounded-full blur-3xl"
+              ></div>
+              <div
+                class="absolute -left-8 -bottom-8 w-48 h-48 bg-secondary/10 rounded-full blur-3xl"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section
+      id="tentang"
+      class="py-20 px-4 bg-gradient-to-br from-brown via-blue-50/30 to-primary/5"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <span
+            class="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4"
+            >Tentang Kami</span
+          >
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">
+            Pemilik Restoran Cena
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Restoran Cena didirikan pada tahun 2020 oleh sepasang sahabat. Restoran ini otentik dan penyajiannya penuh seni. Kecintaan mendalam terhadap
+            budaya dan kuliner jepang. Sejak pertama kali berdiri, Cena bekomitmen untuk menyajikan makanan jepang berkulaitas tinggi dengan bahan bahan
+            segar, resep tradisional, dan sentuhan modern.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div class="relative">
+            <div
+              class="absolute -top-4 -left-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl"
+            ></div>
+            <div
+              class="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary/10 rounded-full blur-2xl"
+            ></div>
+            <img
+              src="IMG-20250424-WA0027.jpg"
+              alt="About Me"
+              class="rounded-3xl shadow-2xl w-full relative z-10 hover:transform hover:scale-[1.02] transition-transform duration-300"
+            />
+          </div>
+          <div class="space-y-8">
+            <div class="space-y-6">
+              <h3 class="text-2xl font-semibold">My Approach</h3>
+              <p class="text-gray-600 leading-relaxed">
+                Pemilik Resturan cena adalah seorang pengusaha kuliner dengan passon di bidang makanan dan kuliner.
+                ia membangun restaurant ini untuk menghadirkan pengalaman makan berkualits dengan cita rasa autentik
+                dan suasana yang nyaman.
+              </p>
+            </div>
+            <div class="space-y-6">
+              <div
+                class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <div class="flex justify-between items-center mb-4">
+                  <h3 class="font-semibold">visi dan Misi</h3>
+                  <span class="text-primary font-semibold">95%</span>
+                </div>
+                <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+                  <div
+                    class="h-full bg-gradient-to-r from-primary to-secondary rounded-full"
+                    style="width: 95%"
+                  ></div>
+                </div>
+              </div>
+              <div
+                class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <div class="flex justify-between items-center mb-4">
+                  <h3 class="font-semibold">Kontrbusi terhadap restaurant</h3>
+                  <span class="text-primary font-semibold">90%</span>
+                </div>
+                <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+                  <div
+                    class="h-full bg-gradient-to-r from-primary to-secondary rounded-full"
+                    style="width: 90%"
+                  ></div>
+                </div>
+              </div>
+              <div
+                class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <div class="flex justify-between items-center mb-4">
+                  <h3 class="font-semibold">Pengalaman berusaha</h3>
+                  <span class="text-primary font-semibold">85%</span>
+                </div>
+                <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+                  <div
+                    class="h-full bg-gradient-to-r from-primary to-secondary rounded-full"
+                    style="width: 85%" 
+                  ></div>
+                </div>
+              </div>
+              <div
+                class="bg-cream p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <div class="flex justify-between items-center mb-4">
+                  <h3 class="font-semibold">Kepuasan terhadap pelanggan
+                  <span class="text-primary font-semibold">80%</span>
+                </div>
+                <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+                  <div
+                    class="h-full bg-gradient-to-r from-primary to-secondary rounded-full"
+                    style="width: 80%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-6 pt-6">
+              <div class="text-center">
+                <div class="text-4xl font-bold text-primary mb-2">150+</div>
+                <p class="text-gray-600">Projects Completed</p>
+              </div>
+              <div class="text-center">
+                <div class="text-4xl font-bold text-primary mb-2">50+</div>
+                <p class="text-gray-600">Happy Clients</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      id="ulasan"
+      class="py-20 px-4 bg-gradient-to-b from-blue-50 to-white"
+    >
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-16">Ulasan</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+          >
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6"
+            >
+              <i class="ri-pen-nib-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4">Rina A. ⭐⭐⭐⭐⭐</h3>
+            <p class="text-gray-600">
+              "Pertama kali makan di Cena dan langsung jatuh cinta! Sushinya seger banget dan Chiken Katsu nya juara!!!
+               temaptnya cosy, cocok buat diner bareng temen atau pasangan.
+              recomended banget untuk yang cari cita rasa jepang yang otentik."
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+          >
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6"
+            >
+              <i class="ri-code-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4">Dimas H. ⭐⭐⭐⭐⭐</h3>
+            <p class="text-gray-600">
+              "Cena jadi pengungsi favorit setiap pulang kerja. Ramen Tonkotsu nya gurih dan hangat banget, pas buat ngelepas penat.
+               Pelayananya juga cepat dan ramah.
+              Pokoknya gak pernah gagal setiap kesini!!!"
+            </p>
+          </div>
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+          >
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6"
+            >
+              <i class="ri-smartphone-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4">Clara M. ⭐⭐⭐⭐⭐</h3>
+            <p class="text-gray-600">
+              "Aku suka banget suasana restorannya - tenang, estetik, dan bersih. Makanannya enak semua, tapi, takoyakinya wajib dicoba!
+              harganya juga masih terjangkau buat anak kuliah. Cena bakal sering aku datengin lagi, deh. "
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      id="menu"
+      class="py-20 px-4 bg-gradient-to-b from-cream to-blue-50"
+    >
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-16">Menu menu yang disajikan</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div class="project-card relative group overflow-hidden rounded-2xl">
+            <img
+              src="IMG-20250424-WA0018.jpg"
+              alt="Project 1"
+              class="w-full h-64 object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end"
+            >
+              <h3 class="text-white text-xl font-semibold mb-2">
+                Okonomiyaki
+              </h3>
+              <p class="text-white/80 mb-4">Pancake gurih yang terbuat dari adoanan tepung, kol, telur, dan berbagai isina seperti daging, seafood, atau keju</p>
+              <div class="flex gap-3">
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-github-line text-white"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-eye-line text-white"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card relative group overflow-hidden rounded-2xl">
+            <img
+              src="IMG-20250424-WA0020.jpg"
+              alt="Project 2"
+              class="w-full h-64 object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end"
+            >
+              <h3 class="text-white text-xl font-semibold mb-2">
+                Tonkotsu Ramen
+              </h3>
+              <p class="text-white/80 mb-4">Ramen dengan kuah kental yang terbuat dari rebusan tulang babi ( irisan daging babi), telur rebus, dan daun bawang.</p>
+              <div class="flex gap-3">
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-github-line text-white"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-eye-line text-white"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card relative group overflow-hidden rounded-2xl">
+            <img
+              src="IMG-20250424-WA0021.jpg"
+              alt="Project 3"
+              class="w-full h-64 object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end"
+            >
+              <h3 class="text-white text-xl font-semibold mb-2">
+                Takoyaki
+              </h3>
+              <p class="text-white/80 mb-4">Bola - bola kecil dari adonan tepung yang diidi dengan potongan gurita (tako), daun bawang dan tenkatsu.</p>
+              <div class="flex gap-3">
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-github-line text-white"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-eye-line text-white"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card relative group overflow-hidden rounded-2xl">
+            <img
+              src="IMG-20250424-WA0022.jpg"
+              alt="Project 4"
+              class="w-full h-64 object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end"
+            >
+              <h3 class="text-white text-xl font-semibold mb-2">
+                Gyoza
+              </h3>
+              <p class="text-white/80 mb-4">Pangsit berisi daging cincang (biasanya babi) dan sayuran seperti kol dan daun bawang.</p>
+              <div class="flex gap-3">
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-github-line text-white"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-eye-line text-white"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card relative group overflow-hidden rounded-2xl">
+            <img
+              src="IMG-20250424-WA0023.jpg"
+              alt="Project 5"
+              class="w-full h-64 object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end"
+            >
+              <h3 class="text-white text-xl font-semibold mb-2">
+                Shasimi Salmon
+              </h3>
+              <p class="text-white/80 mb-4">irisan tipis daging salmon mentah yang segar, disajikan tanpa nasi (berbeda dari sushi).</p>
+              <div class="flex gap-3">
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-github-line text-white"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-eye-line text-white"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card relative group overflow-hidden rounded-2xl">
+            <img
+              src="IMG-20250424-WA0024.jpg"
+              alt="Project 6"
+              class="w-full h-64 object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end"
+            >
+              <h3 class="text-white text-xl font-semibold mb-2">
+                Chiken Katsu
+              </h3>
+              <p class="text-white/80 mb-4">Dada ayam tanpa tulang yang dilapisi tepung roti (panko) lalu digoreng hingga renyah.</p>
+              <div class="flex gap-3">
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-github-line text-white"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-eye-line text-white"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-20 px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <div
+          class="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full mb-6"
+        >
+          <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+          Terimakasih Sudah mau Datang
+        </div>
+        <h2 class="text-4xl font-bold mb-6">
+          Selamat Menikmati Hidangan Kami 🍜
+        </h2>
+        <p class="text-gray-600 mb-8">
+          Jalan - jalan ke kota tua,
+          Hati senang tak terkira.
+          Makan di Cena Luar biasa,
+          Rasa Jepang yang bikin gembira!!!
+        </p>
+        <button
+          class="!rounded-button bg-primary text-white px-8 py-3 hover:bg-primary/90 transition-colors"
+        >
+          🥢🥢🥢
+        </button>
+      </div>
+    </section>
+    <section
+      id="contact"
+      class="py-20 px-4 bg-gradient-to-b from-blue-50 to-cream"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12">
+          <div>
+            <h2 class="text-4xl font-bold mb-6">Get in Touch</h2>
+            <p class="text-gray-600 mb-8">
+              Have a project in mind? Let's discuss how we can work together to
+              bring your ideas to life.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center"
+                >
+                  <i class="ri-mail-line text-primary"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Email</h3>
+                  <p class="text-gray-600">hello@example.com</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center"
+                >
+                  <i class="ri-phone-line text-primary"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Phone</h3>
+                  <p class="text-gray-600">+1 (555) 123-4567</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center"
+                >
+                  <i class="ri-map-pin-line text-primary"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Location</h3>
+                  <p class="text-gray-600">San Francisco, CA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-lg">
+            <form class="space-y-6">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                  required
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                  required
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Message</label
+                >
+                <textarea
+                  rows="4"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full !rounded-button bg-primary text-white px-8 py-3 hover:bg-primary/90 transition-colors"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-gray-900 text-white py-20 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid sm:grid-cols-6 md:grid-cols-12 gap-8 md:gap-12 mb-16">
+          <div class="md:col-span-4">
+            <a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 block"
+              >logo</a
+            >
+            <p class="text-gray-400 mb-8 leading-relaxed">
+              Creating digital experiences that make a difference through
+              innovative design and development. Let's work together to bring
+              your vision to life.
+            </p>
+            <div class="flex items-center gap-6">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-primary transition-colors"
+              >
+                <i class="ri-twitter-x-line text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-primary transition-colors"
+              >
+                <i class="ri-linkedin-line text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-primary transition-colors"
+              >
+                <i class="ri-dribbble-line text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-primary transition-colors"
+              >
+                <i class="ri-github-line text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-primary transition-colors"
+              >
+                <i class="ri-behance-line text-xl"></i>
+              </a>
+            </div>
+          </div>
+          <div class="md:col-span-2">
+            <h3 class="text-lg font-semibold mb-6">Company</h3>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#expertise"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#work"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Portfolio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Careers</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="md:col-span-2">
+            <h3 class="text-lg font-semibold mb-6">Resources</h3>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Documentation</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Support</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Terms</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition-colors"
+                  >Privacy</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="md:col-span-4">
+            <h3 class="text-lg font-semibold mb-6">Subscribe to Newsletter</h3>
+            <p class="text-gray-400 mb-4">
+              Stay updated with our latest news and updates.
+            </p>
+            <form class="flex gap-2">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="flex-1 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+              />
+              <button
+                type="submit"
+                class="!rounded-button bg-primary text-white px-4 py-2 hover:bg-primary/90 transition-colors whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-gray-400">&copy; 2025 All rights reserved.</p>
+          <div class="flex items-center gap-4 md:gap-8 flex-wrap">
+            <a href="#" class="text-gray-400 hover:text-white transition-colors"
+              >Terms</a
+            >
+            <a href="#" class="text-gray-400 hover:text-white transition-colors"
+              >Privacy</a
+            >
+            <a href="#" class="text-gray-400 hover:text-white transition-colors"
+              >Cookies</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuBtn = document.querySelector("button");
+        const nav = document.querySelector(".md\\:flex");
+        const mobileMenu = document.createElement("div");
+        mobileMenu.className =
+          "md:hidden fixed inset-0 bg-gray-900/95 z-40 transform transition-transform duration-300 translate-x-full";
+        mobileMenu.innerHTML = `
+<div class="flex flex-col h-full p-6">
+<div class="flex justify-end mb-8">
+<button class="text-white mobile-close">
+<i class="ri-close-line text-2xl"></i>
+</button>
+</div>
+<nav class="flex flex-col space-y-6">
+<a href="#about" class="text-white text-lg hover:text-primary transition-colors">About</a>
+<a href="#expertise" class="text-white text-lg hover:text-primary transition-colors">Expertise</a>
+<a href="#experience" class="text-white text-lg hover:text-primary transition-colors">Experience</a>
+<a href="#work" class="text-white text-lg hover:text-primary transition-colors">Work</a>
+<a href="#contact" class="text-white text-lg hover:text-primary transition-colors">Contact</a>
+</nav>
+</div>
+`;
+        document.body.appendChild(mobileMenu);
+        mobileMenuBtn.addEventListener("click", function () {
+          mobileMenu.classList.remove("translate-x-full");
+          document.body.style.overflow = "hidden";
+        });
+        const closeBtn = mobileMenu.querySelector(".mobile-close");
+        closeBtn.addEventListener("click", function () {
+          mobileMenu.classList.add("translate-x-full");
+          document.body.style.overflow = "";
+        });
+        const mobileLinks = mobileMenu.querySelectorAll("a");
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.add("translate-x-full");
+            document.body.style.overflow = "";
+          });
+        });
+        const navLinks = document.querySelectorAll('a[href^="#"]');
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+              window.scrollTo({
+                top: target.offsetTop - 64,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+        const form = document.querySelector("form");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const formData = new FormData(form);
+          const data = Object.fromEntries(formData);
+          console.log("Form submitted:", data);
+          const successMessage = document.createElement("div");
+          successMessage.className =
+            "fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg";
+          successMessage.textContent = "Message sent successfully!";
+          document.body.appendChild(successMessage);
+          setTimeout(() => {
+            successMessage.remove();
+          }, 3000);
+          form.reset();
+        });
+        // Add scroll animation
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("animate-fade-in");
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = "translateY(0)";
+              } else {
+                entry.target.classList.remove("animate-fade-in");
+                entry.target.style.opacity = 0;
+                entry.target.style.transform = "translateY(50px)";
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+            rootMargin: "0px",
+          }
+        );
+        document.querySelectorAll("section").forEach((section) => {
+          section.style.opacity = 0;
+          section.style.transform = "translateY(50px)";
+          section.style.transition = "all 0.6s ease-out";
+          observer.observe(section);
+        });
+        document.querySelectorAll(".project-card").forEach((card) => {
+          card.style.opacity = 0;
+          card.style.transform = "translateY(30px)";
+          card.style.transition = "all 0.4s ease-out";
+          observer.observe(card);
+        });
+        document.querySelectorAll(".grid > div").forEach((div) => {
+          div.style.opacity = 0;
+          div.style.transform = "translateY(30px)";
+          div.style.transition = "all 0.4s ease-out";
+          observer.observe(div);
+        });
+      });
+    </script>
+  </body>
+</html>
